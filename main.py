@@ -17,7 +17,7 @@ def run():
         print(f"Running with the current: {args.query}")
     query = args.query
     if query:
-        papers = Fetch.fetch_pub_med_data(query,5)
+        papers = Fetch.fetch_pub_med_data(query,100)
         if args.file:
             Save.save_to_csv(papers,args.file)
             print(f"Results Saved as {args.file}")
