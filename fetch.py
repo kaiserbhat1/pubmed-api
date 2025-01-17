@@ -1,7 +1,6 @@
 from typing import List
 from utility import NON_ACADEMIC_KEYWORDS,PUBMED_URL
 import xml.etree.cElementTree as et
-
 import requests
 class Fetch:
 
@@ -30,7 +29,6 @@ class Fetch:
         with requests.get(search_url,params=search_params) as response:
 
             paper_ids=[each_id for each_id in response.json()["esearchresult"]["idlist"]]
-
         fetch_url = f"{PUBMED_URL}efetch.fcgi"
         fetch_params = {
             "db": "pubmed",
@@ -99,9 +97,9 @@ class Fetch:
                 else:
                     paper["CompanyAffiliation(s)"] = None
                 if email:
-                    paper["Corresponding Author Email(s)"] = email
+                    paper["Corresponding Author Email"] = email
                 else:
-                    paper["Corresponding Author Email(s)"] = "Null"
+                    paper["Corresponding Author Email"] = "Null"
 
                 if author and aff:
                     if paper not in papers:

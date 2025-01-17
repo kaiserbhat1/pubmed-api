@@ -1,4 +1,4 @@
-# importing necessary libraries and modules
+# importing necessary modules
 from fetch import Fetch
 from savefile import Save
 import argparse
@@ -9,7 +9,7 @@ import argparse
 def run():
 
     parser = argparse.ArgumentParser(description="Fetch research papers from PubMed.")
-    parser.add_argument("query",type=str,help="Enter your query. eg: 'cancer'")
+    parser.add_argument("query",type=str,help=" eg: 'cancer'")
     parser.add_argument("-f","--file",type=str,help="File name to save results. eg: 'data.csv'")
     parser.add_argument("-d","--debug",action="store_true",help="Enable debug output.")
     args = parser.parse_args()
